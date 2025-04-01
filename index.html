@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!---- Pre-settings part---->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Harvest</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    <!---- CSS Files ---->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/hero.css" />
+    <link rel="stylesheet" href="./css/how-it-works.css" />
+    <link rel="stylesheet" href="./css/advertisement.css" />
+    <link rel="stylesheet" href="./css/vegetables.css" />
+    <link rel="stylesheet" href="./css/reviews.css" />
+    <link rel="stylesheet" href="./css/your-order.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+
+</head>
+
+<body>
+    <load src="./sections/header.html" />
+    </load>
+    <main>
+        <load src="./sections/hero.html" />
+        </load>
+        <load src="./sections/how-it-works.html" />
+        </load>
+        <load src="./sections/advertisement.html" />
+        </load>
+        <load src="./sections/vegetables.html" />
+        </load>
+        <load src="./sections/reviews.html" />
+        </load>
+        <load src="./sections/your-order.html" />
+        </load>
+    </main>
+    <load src="./sections/footer.html" />
+    </load>
+
+
+    <!---- <load> etiketini tanımlayan JavaScript kodu---->
+    <script>
+        // <load> etiketini tanımlayan JavaScript kodu
+        document.querySelectorAll('load').forEach(async (element) => {
+            const src = element.getAttribute('src');
+            try {
+                const response = await fetch(src);
+                if (!response.ok) throw new Error('Dosya yüklenemedi.');
+                const content = await response.text();
+                element.outerHTML = content;
+            } catch (error) {
+                console.error('Hata:', error);
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
