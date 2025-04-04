@@ -47,6 +47,7 @@
   padding: 0;
   border: none;
   background: none;
+  z-index:1001;
 }
 
 .menu-icon {
@@ -58,6 +59,7 @@
   height: 32px;
   stroke: #fbfbfb;
 }
+
 
 
 /* Settings for tablet devices */
@@ -138,7 +140,6 @@
   }
 
   .header-buy-btn {
-
     font-family: "Inter Tight", sans-serif;
     font-weight: 600;
     font-size: 18px;
@@ -163,4 +164,3 @@
     background: #622133;
   }
 }
-

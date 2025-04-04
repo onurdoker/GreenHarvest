@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/reviews.css" />
     <link rel="stylesheet" href="./css/your-order.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/menu-bar.css" />
 
 </head>
 
@@ -44,12 +45,16 @@
     </main>
     <load src="./sections/footer.html" />
     </load>
+    <load src="./sections/menu-bar.html" />
+    </load>
 
 
     <!---- <load> etiketini tanımlayan JavaScript kodu---->
-    <script>
-        // <load> etiketini tanımlayan JavaScript kodu
-        document.querySelectorAll('load').forEach(async (element) => {
+<script>
+    // <load> etiketlerini yükleme fonksiyonu
+    async function loadSections() {
+        const loadElements = document.querySelectorAll('load');
+        for (const element of loadElements) {
             const src = element.getAttribute('src');
             try {
                 const response = await fetch(src);
@@ -59,9 +64,33 @@
             } catch (error) {
                 console.error('Hata:', error);
             }
-        });
-    </script>
+        }
+        // Tüm section'lar yüklendikten sonra menü event'lerini ekle
+        setupMenu();
+    }
 
+    // Menü açma/kapama fonksiyonu
+    function setupMenu() {
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+        const menuCloseBtn = document.querySelector('.menu-close-btn');
+
+        if (menuBtn && menuBackdrop) {
+            menuBtn.addEventListener('click', () => {
+                menuBackdrop.classList.add('is-open');
+            });
+        }
+
+        if (menuCloseBtn && menuBackdrop) {
+            menuCloseBtn.addEventListener('click', () => {
+                menuBackdrop.classList.remove('is-open');
+            });
+        }
+    }
+
+    // Sayfa yüklendiğinde section'ları yükle
+    window.addEventListener('DOMContentLoaded', loadSections);
+</script>
 
 </body>
 
