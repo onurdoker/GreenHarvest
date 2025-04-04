@@ -10,7 +10,7 @@
   flex-direction: column;
   height: 840px;
   padding-top: 100px;
-  background-size: 365px 372px;
+  background-size: 375px 372px;
   background-image: linear-gradient(
       rgba(20, 20, 20, 0.2),
       rgba(20, 20, 20, 0.2)
@@ -82,7 +82,7 @@
   .hero-container {
     padding-top: 232px;
     height: 796px;
-    background-size: 650px 796px;
+    background-size: 640px 796px;
     background-image: linear-gradient(
         rgba(20, 20, 20, 0.2),
         rgba(20, 20, 20, 0.2)
