@@ -1,3 +1,3 @@
-# GoIT-GreenHarvest
+# GreenHarvest
 
 The Green Harvest project is a website developed by a group of students as part of the GoIT Full-Stack Web Developer Course. The aim of this project is to create a user-friendly, mobile-responsive, and modern website for a company that delivers organic vegetables. The site offers intuitive navigation, allowing users to browse vegetable products, read customer reviews, and make reservations. Technologies such as HTML5 and CSS3 have been used to ensure clean and structured coding, and tools like Git and Trello have been utilized for effective collaboration and project management. 
